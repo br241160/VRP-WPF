@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Collections;
 using System.Collections.ObjectModel;
+using Microsoft.Win32;
 
 namespace WPF_VRP_app
 {
@@ -33,6 +34,8 @@ namespace WPF_VRP_app
     public class VRPcls
     {
         public ObservableCollection<smallVeh> smlVhList { get; set; }
+        public string citiesFile = null;
+        public string dataFile = null;
 
         public VRPcls()
         {
@@ -53,7 +56,7 @@ namespace WPF_VRP_app
             }
             catch (Exception e)
             {
-                MessageBox.Show("There ain't no whips, boi");
+                MessageBox.Show("There aren't any trucks to use.");
                 return default;
             }
 
@@ -153,7 +156,7 @@ namespace WPF_VRP_app
                         }
                         catch(Exception e)
                         {
-                            MessageBox.Show("Ain't enough whips to hustle");
+                            MessageBox.Show("There aren't enough trucks.");
                             return default;
                         }
 
@@ -247,26 +250,26 @@ namespace WPF_VRP_app
             int besthub = 0;
             Stack bestPerm = new Stack();
 
-            System.IO.StreamReader file = new System.IO.StreamReader(@"C:\PL.csv");
+            System.IO.StreamReader file = new System.IO.StreamReader(citiesFile);
             line = file.ReadLine();
             Plik.Add(line);
             String[] rozmiar_st = Plik[0].Split(';');
             rozmiar = Convert.ToInt32(rozmiar_st[0]);
             file.Close();
 
-            data = readFileFunc(@"C:\PLdata.csv", 1);
-            Odleglosci = readFileFunc(@"C:\PL.csv", 2);
+            data = readFileFunc(dataFile, 1);
+            Odleglosci = readFileFunc(citiesFile, 2);
             perm = VRP(Odleglosci, data, hub, rozmiar);
             if (perm == default) return default;
-            Odleglosci = readFileFunc(@"C:\PL.csv", 2);
-            grids = readFileFunc(@"C:\PL.csv", 27);
+            Odleglosci = readFileFunc(citiesFile, 2);
+            grids = readFileFunc(citiesFile, 27);
             wholeDistance = wholeDist(perm, Odleglosci, hub);
 
             for (int i = 0; i < rozmiar; i++)    //wybieramy miasto, w którym najlepiej jest ustalic huba
             {
                 perm = VRP(Odleglosci, data, i, rozmiar);
                 if (perm == default) return default;
-                Odleglosci = readFileFunc(@"C:\PL.csv", 2);
+                Odleglosci = readFileFunc(citiesFile, 2);
                 wholeDistance = wholeDist(perm, Odleglosci, i);
                 if (wholeDistance < bestWholeDistance)
                 {
@@ -292,11 +295,7 @@ namespace WPF_VRP_app
         public MainWindow()
         {
             newOne = new VRPcls();
-            
             InitializeComponent();
-            //VchList.DataContext = newOne;
-
-            
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -311,6 +310,11 @@ namespace WPF_VRP_app
 
         private void VRPexec_Click(object sender, RoutedEventArgs e)
         {
+            if(newOne.citiesFile == null || newOne.dataFile == null)
+            {
+                MessageBox.Show("First choose cities and data files");
+                return;
+            }
             string dist = null;
             double[] outTab = newOne.VRPmain();
             if (outTab == default) {
@@ -321,6 +325,24 @@ namespace WPF_VRP_app
             dist = dist.Substring(0, dist.LastIndexOf(",")+3);
             WholeCntnt.Text = "Best hub is: " + outTab[0].ToString() + ", whole distance is: " + dist + "km";
             VchList.DataContext = newOne;
+        }
+
+        private void bt1_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog opnFile = new OpenFileDialog();
+            if (opnFile.ShowDialog() == true)
+            {
+                newOne.citiesFile = opnFile.FileName;
+            }
+        }
+
+        private void bt2_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog opnFile = new OpenFileDialog();
+            if (opnFile.ShowDialog() == true)
+            {
+                newOne.dataFile = opnFile.FileName;
+            }
         }
     }
 }

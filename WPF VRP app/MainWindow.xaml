@@ -109,6 +109,7 @@
                 Margin="20,10,20,20"
                 Height="40"
                 Content="Cities file"
+                Click="bt1_Click"
                 FontWeight="Bold"
                 FontSize="20"
                 ></Button>
@@ -118,7 +119,8 @@
                 x:Name="bt2"
                 Margin="20,10,20,20"
                 Height="40"
-                Content="Bt2"
+                Content="Data file"
+                Click="bt2_Click"
                 FontWeight="Bold"
                 FontSize="20"
                 ></Button>
