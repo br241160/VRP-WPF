@@ -1,0 +1,19 @@
+C:\Users\barte\source\repos\WPF VRP app\WPF VRP app\bin\Debug\netcoreapp3.1\WPF VRP app.exe
+C:\Users\barte\source\repos\WPF VRP app\WPF VRP app\bin\Debug\netcoreapp3.1\WPF VRP app.deps.json
+C:\Users\barte\source\repos\WPF VRP app\WPF VRP app\bin\Debug\netcoreapp3.1\WPF VRP app.runtimeconfig.json
+C:\Users\barte\source\repos\WPF VRP app\WPF VRP app\bin\Debug\netcoreapp3.1\WPF VRP app.runtimeconfig.dev.json
+C:\Users\barte\source\repos\WPF VRP app\WPF VRP app\bin\Debug\netcoreapp3.1\WPF VRP app.dll
+C:\Users\barte\source\repos\WPF VRP app\WPF VRP app\bin\Debug\netcoreapp3.1\WPF VRP app.pdb
+C:\Users\barte\source\repos\WPF VRP app\WPF VRP app\obj\Debug\netcoreapp3.1\WPF VRP app.csprojAssemblyReference.cache
+C:\Users\barte\source\repos\WPF VRP app\WPF VRP app\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\barte\source\repos\WPF VRP app\WPF VRP app\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\barte\source\repos\WPF VRP app\WPF VRP app\obj\Debug\netcoreapp3.1\WPF VRP app_MarkupCompile.cache
+C:\Users\barte\source\repos\WPF VRP app\WPF VRP app\obj\Debug\netcoreapp3.1\WPF VRP app_MarkupCompile.lref
+C:\Users\barte\source\repos\WPF VRP app\WPF VRP app\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\barte\source\repos\WPF VRP app\WPF VRP app\obj\Debug\netcoreapp3.1\WPF VRP app.g.resources
+C:\Users\barte\source\repos\WPF VRP app\WPF VRP app\obj\Debug\netcoreapp3.1\WPF VRP app.AssemblyInfoInputs.cache
+C:\Users\barte\source\repos\WPF VRP app\WPF VRP app\obj\Debug\netcoreapp3.1\WPF VRP app.AssemblyInfo.cs
+C:\Users\barte\source\repos\WPF VRP app\WPF VRP app\obj\Debug\netcoreapp3.1\WPF VRP app.csproj.CoreCompileInputs.cache
+C:\Users\barte\source\repos\WPF VRP app\WPF VRP app\obj\Debug\netcoreapp3.1\WPF VRP app.dll
+C:\Users\barte\source\repos\WPF VRP app\WPF VRP app\obj\Debug\netcoreapp3.1\WPF VRP app.pdb
+C:\Users\barte\source\repos\WPF VRP app\WPF VRP app\obj\Debug\netcoreapp3.1\WPF VRP app.genruntimeconfig.cache
